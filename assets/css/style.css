@@ -107,10 +107,13 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 997;
   transition: all 0.5s;
   background: #fff;
+  height: 127px;
 }
 #header.fixed-top {
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+  background: #f7e580;
 }
+
 #header .logo h1 {
   font-size: 28px;
   margin: 0;
@@ -127,7 +130,7 @@ h1, h2, h3, h4, h5, h6 {
 #header .logo img {
   padding: 0;
   margin: 0;
-  max-height: 40px;
+  max-height: 98px;
 }
 
 .scrolled-offset {
@@ -456,6 +459,16 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
+.welcome h1 {
+  color: #fed700;
+  font-weight: 600;
+}
+
+
+.welcome p {
+  font-size: 20px;
+}
+
 section {
   padding: 60px 0;
   overflow: hidden;
@@ -614,7 +627,7 @@ section {
   background-attachment: fixed;
 }
 
-.cta::after {
+.cta::before {
   content: '';
   position: absolute;
   top: 0;
@@ -626,7 +639,7 @@ section {
 
 }
 .cta h1 {
-  font-size: 28px;
+  font-size: 35px;
   font-weight: 700;
   z-index: 1000;
 }
@@ -636,7 +649,7 @@ section {
 .cta ul {
   padding: 10px;
   box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-  background: linear-gradient(25deg, rgba(165,196,195,0.711922268907563) 0%, rgba(129,208,255,0.8575805322128851) 37%, rgba(186,246,241,1) 100%);
+  /* background: linear-gradient(25deg, rgba(165,196,195,0.711922268907563) 0%, rgba(129,208,255,0.8575805322128851) 37%, rgba(186,246,241,1) 100%); */
   position: relative;
   width: 350px;
   left: 55px;
@@ -711,37 +724,89 @@ section {
 # Services
 --------------------------------------------------------------*/
 .services {
-  /* background: url('../img/cta-bg.jpg');
-  background-attachment: fixed;
-  background-color: rgba(0, 0, 0, 0.8); */
+  background-color: #eee;
 }
-.services .simg-box {
-  width: 500px;
-  height: 300px;
-}
-
-.services .simg-box img {
-  width: 100%;
-}
-
-.services .title {
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 18px;
-  text-transform: uppercase;
-}
-
-.services .icon-box:hover .title a {
-  color: #f03c02;
-}
-.services .description {
-  line-height: 24px;
-  font-size: 14px;
-  padding: 10px;
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;        
-  position: relative;
-  top: 10px;
+.service-box {
   background: #fff;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, .1);
+  transition: all .3S linear;
+  padding: 25px 20px;
+  position: relative;
+}
+
+.service-box:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, .3);
+}
+
+.service-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 0%;
+  border-top: 2px solid #fed700;
+  border-left: 2px solid #fed700;
+  transition: all .3s linear;
+}
+
+.service-box:hover::before {
+  width: 30%;
+  height: 30%;
+}
+
+.service-box::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0%;
+  height: 0%;
+  border-bottom: 2px solid #fed700;
+  border-right: 2px solid #fed700;
+  transition: all .3s linear;
+}
+
+.service-box:hover::after {
+  width: 30%;
+  height: 30%;
+}
+
+.service-box span.icon {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  background: #fff;
+  color: #f7e580;
+  font-size: 24px;
+  width: 80px;
+  height: 80px;
+  border: 2px solid transparent;
+  transition: all .4s linear;
+}
+
+.service-box:hover span.icon {
+  border-color: #fed700;
+  top: -60px;
+}
+
+.service-box span.icon .fa {
+  line-height: 70px;
+}
+
+.service-box h3 {
+  font-family: 'Roboto';
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.service-box p {
+  font-family: 'Roboto';
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------
@@ -1401,7 +1466,7 @@ section {
   padding: 10px 12px;
 }
 .contact .php-email-form button[type=submit] {
-  background: #f03c02;
+  background: #fed700;
   border: 0;
   padding: 10px 24px;
   color: #fff;
@@ -2006,8 +2071,16 @@ section {
     left: 0;
   }
 
+  #header .logo img {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
+  }
+
   .services .description {
     margin-bottom: 60px;
+  }
+
+  .service-box {
+    margin-bottom: 50px;
   }
 
   .full-img span {
